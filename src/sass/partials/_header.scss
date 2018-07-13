@@ -49,3 +49,45 @@
         color: $c-red;
     }
 }
+
+.uit-photo-container {
+  position: relative;//
+  max-width: 100vw;
+  MIN-HEIGHT: 100VH;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.uit-photo-text {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+  Z-INDEX: 200;
+  color: $c-white;
+}
+
+.uit-header-map {
+  position: relative;
+  overflow: hidden;
+}
+
+.uit-header__standfirst {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+  Z-INDEX: 10;
+  color: $c-white;
+}
+
+.uit-photo-container picture {
+    @include mq(tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: contain;
+    }
+}
