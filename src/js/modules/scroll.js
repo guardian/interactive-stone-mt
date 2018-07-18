@@ -55,7 +55,8 @@ module.exports =  {
             }
         }.bind(this));
         if (stepToShow === 'proposal') {
-            $('#uit-chart-img').attr('srcset', '../assets/stone_mountain_3.jpg 1300w');
+            $('#uit-chart-img').attr('opacity', '../assets/stone_mountain_3.jpg 1300w');
+            $('#uit-chart-img-2').attr('srcset', '../assets/stone_mountain_3.jpg 1300w');
         } else {
           $('#uit-chart-img').attr('srcset', '../assets/stone_mountain_1.jpg 1300w');
         }
@@ -67,8 +68,6 @@ module.exports =  {
         for (var step in steps) {
             $('.uit-chart').removeClass('is-' + steps[step])
         }
-
-
 
         $('.uit-chart').addClass('is-' + currentStep);
     },
