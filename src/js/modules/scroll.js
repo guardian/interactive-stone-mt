@@ -25,8 +25,9 @@ module.exports =  {
 
     onScroll: function() {
         this.updateValues();
-        this.fixMap();
-        this.fixSecondMap();
+        this.checkChart();
+        //this.fixMap();
+        //this.fixSecondMap();
         this.setStep();
     },
 
@@ -34,6 +35,24 @@ module.exports =  {
         windowTop = window.pageYOffset || document.documentElement.scrollTop;
         windowHeight = $(window).height();
         chartHeight = $('.uit-chart').height() + 48;
+    },
+
+    checkChart: function() {
+        var chartToShow = null;
+        var globe = this;
+        $('.uit-chart').each(function(i, el) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
+                chartToShow = $(el).data('chart');
+                //console.log($(el).data('chart'));
+            }
+        }.bind(this));
+        //console.log(chartToShow);
+        if (chartToShow === 'first') {
+            globe.fixMap();
+            //console.log('first chart');
+        } else if (chartToShow === 'second') {
+          globe.fixSecondMap();
+        }
     },
 
     fixMap: function() {
@@ -48,14 +67,19 @@ module.exports =  {
     },
 
     fixSecondMap: function() {
+        $('#uit-chart-second').addClass('is-fixed');
+        $('#uit-chart-second__copy').attr('style', 'margin-top: 400px');
+        /*
         if (windowTop > $('#uit-chart__point-second').offset().top - this.percentageOfHeight(1)) {
             $('#uit-chart-second').removeClass('is-fixed');
-            //$('.uit-step__last').attr('style', 'margin-bottom: -180px');
-            console.log('heyheyhey');
+            $('.uit-step__last--second').attr('style', 'margin-bottom: -80px');
+            //console.log('heyheyhey');
         } else {
-          $('#uit-chart-second').addClass('is-fixed');
-          //$('.uit-step__last').removeAttr('style');
+            $('#uit-chart-second').addClass('is-fixed');
+            $('.uit-step__last--second').removeAttr('style');
+          //console.log('nonononoooo');
         }
+        */
     },
 
     setStep: function() {
