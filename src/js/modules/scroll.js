@@ -26,6 +26,7 @@ module.exports =  {
     onScroll: function() {
         this.updateValues();
         this.fixMap();
+        this.fixSecondMap();
         this.setStep();
     },
 
@@ -36,14 +37,25 @@ module.exports =  {
     },
 
     fixMap: function() {
-        if (windowTop > $('.uit-chart__point').offset().top - this.percentageOfHeight(1)) {
-            $('.uit-chart').removeClass('is-fixed');
+        if (windowTop > $('#uit-chart__point-first').offset().top - this.percentageOfHeight(1)) {
+            $('#uit-chart-first').removeClass('is-fixed');
             $('.uit-step__last').attr('style', 'margin-bottom: -80px');
         } else {
-          $('.uit-chart').addClass('is-fixed');
+          $('#uit-chart-first').addClass('is-fixed');
           $('.uit-step__last').removeAttr('style');
+          //console.log('yoyoyo');
         }
+    },
 
+    fixSecondMap: function() {
+        if (windowTop > $('#uit-chart__point-second').offset().top - this.percentageOfHeight(1)) {
+            $('#uit-chart-second').removeClass('is-fixed');
+            //$('.uit-step__last').attr('style', 'margin-bottom: -180px');
+            console.log('heyheyhey');
+        } else {
+          $('#uit-chart-second').addClass('is-fixed');
+          //$('.uit-step__last').removeAttr('style');
+        }
     },
 
     setStep: function() {
