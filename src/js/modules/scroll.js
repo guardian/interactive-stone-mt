@@ -75,7 +75,7 @@ module.exports =  {
                 stepToShow = $(el).data('step');
             }
         }.bind(this));
-        $('#uit-chart-img--'+ currentChart).attr('src', '../../assets/stone_mountain_'+ stepToShow+'.jpg');
+        $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/stone_mountain_'+ stepToShow+'.jpg');
         this.highlightStates(stepToShow);
     },
 
