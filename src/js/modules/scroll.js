@@ -43,18 +43,16 @@ module.exports =  {
         } else {
           $('#uit-chart-first').addClass('is-fixed');
           $('.uit-step__last').removeAttr('style');
-          //console.log('yoyoyo');
         }
     },
 
     fixSecondMap: function() {
         if (windowTop > $('#uit-chart__point-second').offset().top - this.percentageOfHeight(1)) {
-            $('#uit-chart-second').removeClass('is-fixed');
-            //$('.uit-step__last').attr('style', 'margin-bottom: -180px');
-            console.log('heyheyhey');
+            $('#uit-chart-second').addClass('is-fixed');
+            $('.uit-step__last-second').removeAttr('style');
         } else {
-          $('#uit-chart-second').addClass('is-fixed');
-          //$('.uit-step__last').removeAttr('style');
+          $('#uit-chart-second').removeClass('is-fixed');
+          $('.uit-step__last-second').attr('style', 'margin-bottom: -80px');
         }
     },
 
