@@ -1,4 +1,5 @@
 var windowTop, windowHeight, steps = [], chartHeight;
+var currentChart = 1;
 
 module.exports =  {
     init: function() {
@@ -43,6 +44,7 @@ module.exports =  {
                 ($('#uit-chart-number--'+ $(el).attr('data-chart'))).addClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('uit-chart-marker-fixed');
+                currentChart = $(el).attr('data-chart');
             } else {
               $('#uit-chart-number--'+ $(el).attr('data-chart')).removeClass('is-fixed');
               $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
@@ -73,12 +75,7 @@ module.exports =  {
                 stepToShow = $(el).data('step');
             }
         }.bind(this));
-        if (stepToShow === 'proposal') {
-            $('#uit-chart-img').attr('opacity', '../assets/stone_mountain_3.jpg 1300w');
-            $('#uit-chart-img-2').attr('srcset', '../assets/stone_mountain_3.jpg 1300w');
-        } else {
-          $('#uit-chart-img').attr('srcset', '../assets/stone_mountain_1.jpg 1300w');
-        }
+        $('#uit-chart-img--'+ currentChart).attr('src', '../../assets/stone_mountain_'+ stepToShow+'.jpg');
         this.highlightStates(stepToShow);
     },
 
