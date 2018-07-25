@@ -36,6 +36,24 @@ module.exports =  {
         chartHeight = $('.uit-chart').height() + 48;
     },
 
+    checkChart: function() {
+        var chartToShow = null;
+        var globe = this;
+        $('.uit-chart').each(function(i, el) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
+                chartToShow = $(el).data('chart');
+                //console.log($(el).data('chart'));
+            }
+        }.bind(this));
+        //console.log(chartToShow);
+        if (chartToShow === 'first') {
+            globe.fixMap();
+            //console.log('first chart');
+        } else if (chartToShow === 'second') {
+          globe.fixSecondMap();
+        }
+    },
+
     fixMap: function() {
         //check to see if top of marker div is in view; if it is, fix the map
         $('.uit-chart-marker').each(function(i, el) {
@@ -50,6 +68,7 @@ module.exports =  {
             }
         }.bind(this));
     },
+
 
     unFixMap: function() {
         //check to see if last point is in view. when it's at top, unfix the map
