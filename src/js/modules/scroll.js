@@ -26,7 +26,7 @@ module.exports =  {
     onScroll: function() {
         this.updateValues();
         this.fixMap();
-        this.testingMap();
+        this.unFixMap();
         this.setStep();
     },
 
