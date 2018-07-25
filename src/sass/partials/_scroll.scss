@@ -35,6 +35,11 @@
 
 .uit-step__last {
   margin-bottom: 95vh;
+
+  &.is-fixed {
+      margin-bottom: -80px;
+  }
+
 }
 
 .uit-chart {

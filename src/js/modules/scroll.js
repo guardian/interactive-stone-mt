@@ -26,7 +26,7 @@ module.exports =  {
     onScroll: function() {
         this.updateValues();
         this.fixMap();
-        this.fixSecondMap();
+        this.testingMap();
         this.setStep();
     },
 
@@ -37,28 +37,35 @@ module.exports =  {
     },
 
     fixMap: function() {
-        if (windowTop > $('#uit-chart__point-first').offset().top - this.percentageOfHeight(1)) {
-            $('#uit-chart-first').removeClass('is-fixed');
-            $('.uit-step__last').attr('style', 'margin-bottom: -80px');
-        } else {
-          $('#uit-chart-first').addClass('is-fixed');
-          $('.uit-step__last').removeAttr('style');
-        }
+        //check to see if top of marker div is in view; if it is, fix the map
+        $('.uit-chart-marker').each(function(i, el) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
+                ($('#uit-chart-number--'+ $(el).attr('data-chart'))).addClass('is-fixed');
+                $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
+                $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('uit-chart-marker-fixed');
+            } else {
+              $('#uit-chart-number--'+ $(el).attr('data-chart')).removeClass('is-fixed');
+              $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
+              $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('uit-chart-marker-fixed');
+            }
+        }.bind(this));
     },
 
-    fixSecondMap: function() {
-        if (windowTop > $('#uit-chart__point-second').offset().top - this.percentageOfHeight(1)) {
-            $('#uit-chart-second').addClass('is-fixed');
-            $('.uit-step__last-second').removeAttr('style');
-        } else {
-          $('#uit-chart-second').removeClass('is-fixed');
-          $('.uit-step__last-second').attr('style', 'margin-bottom: -80px');
-        }
+    unFixMap: function() {
+        //check to see if last point is in view. when it's at top, unfix the map
+        $('.uit-chart-marker-fixed').each(function(i, el) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
+                ($('#uit-chart-number--'+ $(el).attr('data-chart'))).removeClass('is-fixed');
+                $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
+            } else {
+              $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
+              $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
+            }
+        }.bind(this));
     },
 
     setStep: function() {
         var stepToShow = null;
-
         $('.uit-step').each(function(i, el) {
             if (windowTop > $(el).offset().top - this.percentageOfHeight(80)) {
                 stepToShow = $(el).data('step');
@@ -70,7 +77,6 @@ module.exports =  {
         } else {
           $('#uit-chart-img').attr('srcset', '../assets/stone_mountain_1.jpg 1300w');
         }
-
         this.highlightStates(stepToShow);
     },
 
@@ -78,7 +84,6 @@ module.exports =  {
         for (var step in steps) {
             $('.uit-chart').removeClass('is-' + steps[step])
         }
-
         $('.uit-chart').addClass('is-' + currentStep);
     },
 
