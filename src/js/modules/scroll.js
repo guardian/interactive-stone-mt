@@ -36,24 +36,6 @@ module.exports =  {
         chartHeight = $('.uit-chart').height() + 48;
     },
 
-    checkChart: function() {
-        var chartToShow = null;
-        var globe = this;
-        $('.uit-chart').each(function(i, el) {
-            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
-                chartToShow = $(el).data('chart');
-                //console.log($(el).data('chart'));
-            }
-        }.bind(this));
-        //console.log(chartToShow);
-        if (chartToShow === 'first') {
-            globe.fixMap();
-            //console.log('first chart');
-        } else if (chartToShow === 'second') {
-          globe.fixSecondMap();
-        }
-    },
-
     fixMap: function() {
         //check to see if top of marker div is in view; if it is, fix the map
         $('.uit-chart-marker').each(function(i, el) {
@@ -76,6 +58,7 @@ module.exports =  {
             if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
                 ($('#uit-chart-number--'+ $(el).attr('data-chart'))).removeClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
+                $('#uit-steps--'+ $(el).attr('data-chart')).addClass('is-fixed');
             } else {
               $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
               $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
