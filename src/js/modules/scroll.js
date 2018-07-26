@@ -75,8 +75,18 @@ module.exports =  {
                 stepToShow = $(el).data('step');
             }
         }.bind(this));
-        $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/stone_mountain_'+ stepToShow+'.jpg');
-        console.log(currentChart);
+        if (currentChart == 1){
+            console.log('heyo');
+            $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/stone_mountain_'+ stepToShow+'.jpg');
+        }
+        else if (currentChart == 2){
+            console.log('noyo');
+            $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/mountain_top_'+ stepToShow+'.jpg');
+        }
+        else {
+            console.log('threeyo');
+            $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/stone_mountain_'+ stepToShow+'.jpg');
+        }
         this.highlightStates(stepToShow);
     },
 
