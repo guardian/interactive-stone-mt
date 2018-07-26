@@ -53,7 +53,6 @@ module.exports =  {
         }.bind(this));
     },
 
-
     unFixMap: function() {
         //check to see if last point is in view. when it's at top, unfix the map
         $('.uit-chart-marker-fixed').each(function(i, el) {
@@ -64,6 +63,7 @@ module.exports =  {
             } else {
               $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
               $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
+              currentChart = $(el).attr('data-chart');
             }
         }.bind(this));
     },
@@ -76,6 +76,7 @@ module.exports =  {
             }
         }.bind(this));
         $('#uit-chart-img--'+ currentChart).attr('src', '{{ path }}/assets/stone_mountain_'+ stepToShow+'.jpg');
+        console.log(currentChart);
         this.highlightStates(stepToShow);
     },
 
