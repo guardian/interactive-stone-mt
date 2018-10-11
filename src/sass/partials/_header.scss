@@ -81,13 +81,45 @@
   color: $c-white;
 }
 
-.uit-photo-container picture {
+.uit-video-text {
+    @include mq(tablet) {
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.video_card_container {
+    width: 100%;
+    height: 100%;
+
     @include mq(tablet) {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        object-fit: contain;
     }
 }
+
+#bgvid {
+    min-height: 250px;
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+}
+ .uit-video-cta {
+   font-size: 20px;
+   padding-bottom: 10px;
+   color: $c-white;
+ }
+
+ .uit-video-cta * {
+   vertical-align: middle;
+ }
+
+ .uit-steps {
+     p {
+         font-size: 17px;
+     }
+ }

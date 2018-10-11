@@ -1,6 +1,6 @@
 .uit {
     overflow: hidden;
-    background-color: $c-white;
+    background-color: #ededed;
 }
 
 .uit-container {
@@ -53,4 +53,14 @@
             background-color: $c-light-grey;
         }
     }
+}
+
+.uit-middle-content {
+    position: relative;
+    max-width: 640px;
+    margin: 50% auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
