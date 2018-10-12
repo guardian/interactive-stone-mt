@@ -7,5 +7,26 @@
     margin: 50% auto;
     margin-bottom: 15px;
     margin-top: 30px;
+    position: relative;
+}
 
+.uit-quote-subhead {
+    position: absolute;
+    top: 10%;
+    left: 65%;
+    width: 50%;
+    font-size: 38px;
+    opacity: 0;
+    transition-delay: 3s;
+    transition: opacity 2s;
+
+    h3 {
+        font-size: 38px;
+    }
+
+    h4 {
+        font-family: 'Guardian Egyptian Web';
+        font-weight: 300;
+        color: #fff;
+    }
 }
