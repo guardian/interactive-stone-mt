@@ -84,7 +84,7 @@ module.exports =  {
     showQuote: function() {
         var quoteToShow = null;
         $('.uit-section-divider').each(function(i, el) {
-            if ((windowTop > $(el).offset().top - this.percentageOfHeight(60)) &&
+            if ((windowTop > $(el).offset().top - this.percentageOfHeight(40)) &&
             windowTop < ($(el).offset().top + $(el).height())) {
                 //console.log('value1: ' + $(el).offset().top);
                 quoteToShow = $(el).data('step');
@@ -106,17 +106,10 @@ module.exports =  {
     },
 
     highlightQuotes: function(quoteToShow) {
-        if (currentQuote != quoteToShow){
-            console.log('yea');
-            //$('#uit-section-divider' + currentQuote).css('opacity', "0");
+        if ((currentQuote != quoteToShow) || quoteToShow == null){
+            $('#uit-section-divider-' + currentQuote).css('opacity', "0");
             $('#uit-section-divider-' + quoteToShow).css('opacity', "1");
             currentQuote = quoteToShow;
-            /*
-            for (var step in steps) {
-                $('.uit-chart').removeClass('is-' + steps[step])
-            }
-            $('.uit-chart').addClass('is-' + currentStep);
-            */
         }
     },
 
