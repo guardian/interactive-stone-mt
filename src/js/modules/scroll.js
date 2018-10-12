@@ -74,7 +74,7 @@ module.exports =  {
     setStep: function() {
         var stepToShow = null;
         $('.uit-step').each(function(i, el) {
-            if (windowTop > $(el).offset().top - this.percentageOfHeight(80)) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(50)) {
                 stepToShow = $(el).data('step');
             }
         }.bind(this));
@@ -99,10 +99,25 @@ module.exports =  {
     },
 
     highlightStates: function(currentStep) {
-        for (var step in steps) {
-            $('.uit-chart').removeClass('is-' + steps[step])
+        //console.log(currentStep);
+        switch (currentStep) {
+            case 1:
+            $('#bgvid')
+            .html('<source src="{{ path }}/assets/stone-mt.mp4" type="video/mp4" />');
+            break;
+            case 2:
+            $('#bgvid')
+            .html('<source src="{{ path }}/assets/placeholder.mp4" type="video/mp4" />');
+            break;
+            case 3:
+            $('#bgvid')
+            .html('<source src="{{ path }}/assets/trimmed_video.mp4" type="video/mp4" />');
+            break;
         }
-        $('.uit-chart').addClass('is-' + currentStep);
+        /*
+        $('#bgvid-source-link')
+        .attr('src', '{{ path }}/assets/placeholder.mp4');
+        */
     },
 
     highlightQuotes: function(quoteToShow) {
