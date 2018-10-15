@@ -21,12 +21,21 @@
     transition: opacity 2.5s;
 
     h3 {
-        font-size: 38px;
+        font-size: 24px;
+        @include mq(desktop) {
+            font-size: 34px;
+        }
     }
 
     h4 {
         font-family: 'Guardian Egyptian Web';
         font-weight: 300;
         color: #fff;
+
+        font-size: 24px;
+
+        @include mq(desktop) {
+            font-size: 34px;
+        }
     }
 }

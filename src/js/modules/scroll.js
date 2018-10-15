@@ -2,8 +2,12 @@ var windowTop, windowHeight, windowBottom, steps = [], chartHeight;
 var currentChart = 1;
 var currentQuote = 0;
 var currentStep = 1;
-var video = document.getElementById('bgvid');
+var video = document.getElementById('bgvid1');
 var source = document.createElement('SOURCE');
+var video2 = document.getElementById('bgvid2');
+var source2 = document.createElement('SOURCE');
+var video3 = document.getElementById('bgvid3');
+var source3 = document.createElement('SOURCE');
 
 module.exports =  {
     init: function() {
@@ -32,27 +36,31 @@ module.exports =  {
             e.preventDefault();
             $('#uit-section-divider-3').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
             //$('#uit-section-divider-1').hide();
-            console.log('third');
         }.bind(this));
 
         $('#video_svg_colletti').click(function(e) {
             e.preventDefault();
             $('#uit-section-divider-2').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
             //$('#uit-section-divider-2').hide();
-            console.log('second');
         }.bind(this));
 
         $('#video_svg_desmond').click(function(e) {
             e.preventDefault();
             $('#uit-section-divider-1').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
             //$('#uit-section-divider-3').hide();
-            console.log('first');
         }.bind(this));
 
-        source.setAttribute("id", "testng");
         source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
         video.append(source);
         video.play();
+        source2.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
+        video2.append(source2);
+        video2.pause();
+        source3.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
+        video3.append(source3);
+        video3.pause();
+
+        $('.uit-chart').css('margin-bottom', $(window).height());
     },
 
     onScroll: function() {
@@ -93,10 +101,12 @@ module.exports =  {
                 ($('#uit-chart-number--'+ $(el).attr('data-chart'))).removeClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
                 $('#uit-steps--'+ $(el).attr('data-chart')).addClass('is-fixed');
+                //$('.bgvid').css('position', "relative");
             } else {
                 $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
                 currentChart = $(el).attr('data-chart');
+                $('.bgvid').css('position', "absolute");
             }
         }.bind(this));
     },
@@ -134,22 +144,47 @@ module.exports =  {
         if ((currentStep != stepToShow) || stepToShow == null){
             switch (stepToShow) {
                 case 1:
-                //video.pause();
+                /*
+                video.pause();
                 source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
                 video.load();
                 video.play();
+                */
+                $('#bgvid2').css('opacity', "0");
+                $('#bgvid3').css('opacity', "0");
+                $('#bgvid1').css('opacity', "1");
+                video2.pause();
+                video3.pause();
+                video.play();
+
                 break;
                 case 2:
+                /*
                 //video.pause();
                 source.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
                 video.load();
                 video.play();
+                */
+                $('#bgvid2').css('opacity', "1");
+                $('#bgvid1').css('opacity', "0");
+                $('#bgvid3').css('opacity', "0");
+                video.pause();
+                video3.pause();
+                video2.play();
                 break;
                 case 3:
+
                 //video.pause();
-                source.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
-                video.load();
-                video.play();
+                $('#bgvid3').css('opacity', "1");
+                $('#bgvid2').css('opacity', "0");
+                $('#bgvid1').css('opacity', "0");
+                video2.pause();
+                video.pause();
+                video3.play();
+                /*
+                $('#bgvid_2').css('opacity', "0");
+                $('#bgvid_3').css('opacity', "1");
+                */
                 break;
             }
             currentStep = stepToShow;

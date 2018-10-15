@@ -8,7 +8,7 @@
     margin-top: 50vh;
 
     p {
-        font-size: 17px;
+        font-size: 24px;
     }
 }
 
@@ -31,10 +31,8 @@
     position: relative;
     z-index: 100;
     background-color: #000;
-    border-left: 1px solid $c-light-grey;
-    border-top: 1px solid $c-light-grey;
     padding: 6px;
-    margin-bottom: 55vh;
+    margin-bottom: 65vh;
     color: $c-white;
 }
 
@@ -47,8 +45,8 @@
 }
 
 .uit-chart {
-
   padding-bottom: 24px;
+  //margin-bottom: 750px;
 
     &.is-fixed {
         position: fixed;
@@ -64,10 +62,6 @@
             max-width: 100%;
             top: 0vh;
         }
-    }
-
-    g path {
-        transition: 0.3s linear all;
     }
 }
 /*

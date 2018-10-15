@@ -107,11 +107,13 @@
     }
 }
 
-#bgvid {
+.bgvid {
     min-height: 250px;
     object-fit: cover;
     height: 100vh;
     width: 100vw;
+    position: absolute;
+    transition: 0.2s linear all;
 }
 
 #interview_vid {
@@ -126,10 +128,4 @@
 
  .uit-video-cta * {
    vertical-align: middle;
- }
-
- .uit-steps {
-     p {
-         font-size: 17px;
-     }
  }
