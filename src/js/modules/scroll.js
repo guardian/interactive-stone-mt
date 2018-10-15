@@ -8,6 +8,7 @@ var video2 = document.getElementById('bgvid2');
 var source2 = document.createElement('SOURCE');
 var video3 = document.getElementById('bgvid3');
 var source3 = document.createElement('SOURCE');
+var div_height, div_width;
 
 module.exports =  {
     init: function() {
@@ -34,20 +35,29 @@ module.exports =  {
 
         $('#video_svg_thurmond').click(function(e) {
             e.preventDefault();
-            $('#uit-section-divider-3').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
-            //$('#uit-section-divider-1').hide();
+            div_height = $('#uit-section-divider-3').height();
+            div_width = $('#uit-section-divider-3').width();
+            $('#uit-section-divider-3').html('<iframe id="interview_vid_3" src="https://www.youtube.com/embed/DfbKFaexpNY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#interview_vid_3').css('height', div_height);
+            $('#interview_vid_3').css('width', div_width);
         }.bind(this));
 
         $('#video_svg_colletti').click(function(e) {
             e.preventDefault();
-            $('#uit-section-divider-2').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
-            //$('#uit-section-divider-2').hide();
+            div_height = $('#uit-section-divider-2').height();
+            div_width = $('#uit-section-divider-3').width();
+            $('#uit-section-divider-2').html('<iframe id="interview_vid_2" src="https://www.youtube.com/embed/DfbKFaexpNY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#interview_vid_2').css('height', div_height);
+            $('#interview_vid_2').css('width', div_width);
         }.bind(this));
 
         $('#video_svg_desmond').click(function(e) {
             e.preventDefault();
-            $('#uit-section-divider-1').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
-            //$('#uit-section-divider-3').hide();
+            div_height = $('#uit-section-divider-1').height();
+            div_width = $('#uit-section-divider-3').width();
+            $('#uit-section-divider-1').html('<iframe id="interview_vid_1" src="https://www.youtube.com/embed/DfbKFaexpNY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#interview_vid_1').css('height', div_height);
+            $('#interview_vid_1').css('width', div_width);
         }.bind(this));
 
         source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
@@ -59,8 +69,6 @@ module.exports =  {
         source3.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
         video3.append(source3);
         video3.pause();
-
-        $('.uit-chart').css('margin-bottom', $(window).height());
     },
 
     onScroll: function() {
@@ -76,10 +84,10 @@ module.exports =  {
         windowHeight = $(window).height();
         windowBottom = windowTop + windowHeight;
         chartHeight = $('.uit-chart').height() + 48;
+        $('.uit-chart').css('margin-bottom', $(window).height());
     },
 
     fixMap: function() {
-        //check to see if top of marker div is in view; if it is, fix the map
         $('.uit-chart-marker').each(function(i, el) {
             if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
                 ($('#uit-chart-number--'+ $(el).attr('data-chart'))).addClass('is-fixed');
@@ -95,13 +103,11 @@ module.exports =  {
     },
 
     unFixMap: function() {
-        //check to see if last point is in view. when it's at top, unfix the map
         $('.uit-chart-marker-fixed').each(function(i, el) {
             if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
                 ($('#uit-chart-number--'+ $(el).attr('data-chart'))).removeClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
                 $('#uit-steps--'+ $(el).attr('data-chart')).addClass('is-fixed');
-                //$('.bgvid').css('position', "relative");
             } else {
                 $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
                 $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
@@ -126,45 +132,24 @@ module.exports =  {
         $('.uit-section-divider').each(function(i, el) {
             if ((windowTop > $(el).offset().top - this.percentageOfHeight(40)) &&
             windowTop < ($(el).offset().top + $(el).height())) {
-                //console.log('value1: ' + $(el).offset().top);
                 quoteToShow = $(el).data('step');
             }
         }.bind(this));
         this.highlightQuotes(quoteToShow);
-
-        //console.log('windowTop: ' + windowTop);
-        //console.log('windowBottom: ' + windowBottom);
-        //console.log(quoteToShow);
-        //this.highlightStates(stepToShow);
     },
 
     highlightStates: function(stepToShow) {
-
-        //console.log(currentStep);
         if ((currentStep != stepToShow) || stepToShow == null){
             switch (stepToShow) {
                 case 1:
-                /*
-                video.pause();
-                source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
-                video.load();
-                video.play();
-                */
                 $('#bgvid2').css('opacity', "0");
                 $('#bgvid3').css('opacity', "0");
                 $('#bgvid1').css('opacity', "1");
                 video2.pause();
                 video3.pause();
                 video.play();
-
                 break;
                 case 2:
-                /*
-                //video.pause();
-                source.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
-                video.load();
-                video.play();
-                */
                 $('#bgvid2').css('opacity', "1");
                 $('#bgvid1').css('opacity', "0");
                 $('#bgvid3').css('opacity', "0");
@@ -173,26 +158,16 @@ module.exports =  {
                 video2.play();
                 break;
                 case 3:
-
-                //video.pause();
                 $('#bgvid3').css('opacity', "1");
                 $('#bgvid2').css('opacity', "0");
                 $('#bgvid1').css('opacity', "0");
                 video2.pause();
                 video.pause();
                 video3.play();
-                /*
-                $('#bgvid_2').css('opacity', "0");
-                $('#bgvid_3').css('opacity', "1");
-                */
                 break;
             }
             currentStep = stepToShow;
         }
-        /*
-        $('#bgvid-source-link')
-        .attr('src', '{{ path }}/assets/placeholder.mp4');
-        */
     },
 
     highlightQuotes: function(quoteToShow) {
