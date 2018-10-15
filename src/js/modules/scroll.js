@@ -28,6 +28,27 @@ module.exports =  {
             this.onScroll();
         }.bind(this));
 
+        $('#video_svg_thurmond').click(function(e) {
+            e.preventDefault();
+            $('#uit-section-divider-3').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            //$('#uit-section-divider-1').hide();
+            console.log('third');
+        }.bind(this));
+
+        $('#video_svg_colletti').click(function(e) {
+            e.preventDefault();
+            $('#uit-section-divider-2').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            //$('#uit-section-divider-2').hide();
+            console.log('second');
+        }.bind(this));
+
+        $('#video_svg_desmond').click(function(e) {
+            e.preventDefault();
+            $('#uit-section-divider-1').html('<iframe id="interview_vid" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            //$('#uit-section-divider-3').hide();
+            console.log('first');
+        }.bind(this));
+
         source.setAttribute("id", "testng");
         source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
         video.append(source);
@@ -113,21 +134,18 @@ module.exports =  {
         if ((currentStep != stepToShow) || stepToShow == null){
             switch (stepToShow) {
                 case 1:
-                console.log('one');
                 //video.pause();
                 source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
                 video.load();
                 video.play();
                 break;
                 case 2:
-                console.log('two');
                 //video.pause();
                 source.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
                 video.load();
                 video.play();
                 break;
                 case 3:
-                console.log('three');
                 //video.pause();
                 source.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
                 video.load();
@@ -144,8 +162,8 @@ module.exports =  {
 
     highlightQuotes: function(quoteToShow) {
         if ((currentQuote != quoteToShow) || quoteToShow == null){
-            $('#uit-section-divider-' + currentQuote).css('opacity', "0");
-            $('#uit-section-divider-' + quoteToShow).css('opacity', "1");
+            $('#uit-section-divider-' + currentQuote + ' .uit-quote-subhead').css('opacity', "0");
+            $('#uit-section-divider-' + quoteToShow + ' .uit-quote-subhead').css('opacity', "1");
             currentQuote = quoteToShow;
         }
     },
