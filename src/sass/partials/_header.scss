@@ -19,6 +19,20 @@
     color: $c-red;
 }
 
+.uit-middle-content {
+    .uit-header__standfirst {
+        padding: 3px 0 0;
+        font-family: 'Guardian Egyptian Web';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.2;
+
+        @include mq(tablet) {
+            font-size: 24px;
+        }
+    }
+}
+
 .uit-header__standfirst {
     padding: 3px 0 0;
     font-family: 'Guardian Egyptian Web';
@@ -70,15 +84,6 @@
 .uit-header-map {
   position: relative;
   overflow: hidden;
-}
-
-.uit-header__standfirst {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 1);
-  Z-INDEX: 10;
-  color: $c-white;
 }
 
 .uit-video-text {

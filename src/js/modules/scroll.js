@@ -1,12 +1,16 @@
 var windowTop, windowHeight, windowBottom, steps = [], chartHeight;
 var currentChart = 1;
 var currentQuote = 0;
+var currentStep = 1;
+var video = document.getElementById('bgvid');
+var source = document.createElement('SOURCE');
 
 module.exports =  {
     init: function() {
         this.bindings();
         this.getSteps();
         this.onScroll();
+
     },
 
     getSteps: function() {
@@ -23,6 +27,11 @@ module.exports =  {
         $(window).resize(function() {
             this.onScroll();
         }.bind(this));
+
+        source.setAttribute("id", "testng");
+        source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
+        video.append(source);
+        video.play();
     },
 
     onScroll: function() {
@@ -98,21 +107,34 @@ module.exports =  {
         //this.highlightStates(stepToShow);
     },
 
-    highlightStates: function(currentStep) {
+    highlightStates: function(stepToShow) {
+
         //console.log(currentStep);
-        switch (currentStep) {
-            case 1:
-            $('#bgvid')
-            .html('<source src="{{ path }}/assets/stone-mt.mp4" type="video/mp4" />');
-            break;
-            case 2:
-            $('#bgvid')
-            .html('<source src="{{ path }}/assets/placeholder.mp4" type="video/mp4" />');
-            break;
-            case 3:
-            $('#bgvid')
-            .html('<source src="{{ path }}/assets/trimmed_video.mp4" type="video/mp4" />');
-            break;
+        if ((currentStep != stepToShow) || stepToShow == null){
+            switch (stepToShow) {
+                case 1:
+                console.log('one');
+                //video.pause();
+                source.setAttribute('src', '{{ path }}/assets/stone-mt.mp4');
+                video.load();
+                video.play();
+                break;
+                case 2:
+                console.log('two');
+                //video.pause();
+                source.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
+                video.load();
+                video.play();
+                break;
+                case 3:
+                console.log('three');
+                //video.pause();
+                source.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
+                video.load();
+                video.play();
+                break;
+            }
+            currentStep = stepToShow;
         }
         /*
         $('#bgvid-source-link')
