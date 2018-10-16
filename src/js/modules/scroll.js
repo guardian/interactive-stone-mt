@@ -6,8 +6,6 @@ var video = document.getElementById('bgvid1');
 var source = document.createElement('SOURCE');
 var video2 = document.getElementById('bgvid2');
 var source2 = document.createElement('SOURCE');
-var video3 = document.getElementById('bgvid3');
-var source3 = document.createElement('SOURCE');
 var div_height, div_width;
 
 module.exports =  {
@@ -45,7 +43,7 @@ module.exports =  {
         $('#video_svg_colletti').click(function(e) {
             e.preventDefault();
             div_height = $('#uit-section-divider-2').height();
-            div_width = $('#uit-section-divider-3').width();
+            div_width = $('#uit-section-divider-2').width();
             $('#uit-section-divider-2').html('<iframe id="interview_vid_2" src="https://www.youtube.com/embed/DfbKFaexpNY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
             $('#interview_vid_2').css('height', div_height);
             $('#interview_vid_2').css('width', div_width);
@@ -54,7 +52,7 @@ module.exports =  {
         $('#video_svg_desmond').click(function(e) {
             e.preventDefault();
             div_height = $('#uit-section-divider-1').height();
-            div_width = $('#uit-section-divider-3').width();
+            div_width = $('#uit-section-divider-1').width();
             $('#uit-section-divider-1').html('<iframe id="interview_vid_1" src="https://www.youtube.com/embed/DfbKFaexpNY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
             $('#interview_vid_1').css('height', div_height);
             $('#interview_vid_1').css('width', div_width);
@@ -66,9 +64,6 @@ module.exports =  {
         source2.setAttribute('src', '{{ path }}/assets/placeholder.mp4');
         video2.append(source2);
         video2.pause();
-        source3.setAttribute('src', '{{ path }}/assets/trimmed_video.mp4');
-        video3.append(source3);
-        video3.pause();
     },
 
     onScroll: function() {
@@ -120,7 +115,7 @@ module.exports =  {
     setStep: function() {
         var stepToShow = null;
         $('.uit-step').each(function(i, el) {
-            if (windowTop > $(el).offset().top - this.percentageOfHeight(50)) {
+            if (windowTop > $(el).offset().top - this.percentageOfHeight(70)) {
                 stepToShow = $(el).data('step');
             }
         }.bind(this));
@@ -143,27 +138,15 @@ module.exports =  {
             switch (stepToShow) {
                 case 1:
                 $('#bgvid2').css('opacity', "0");
-                $('#bgvid3').css('opacity', "0");
                 $('#bgvid1').css('opacity', "1");
                 video2.pause();
-                video3.pause();
                 video.play();
                 break;
                 case 2:
                 $('#bgvid2').css('opacity', "1");
                 $('#bgvid1').css('opacity', "0");
-                $('#bgvid3').css('opacity', "0");
                 video.pause();
-                video3.pause();
                 video2.play();
-                break;
-                case 3:
-                $('#bgvid3').css('opacity', "1");
-                $('#bgvid2').css('opacity', "0");
-                $('#bgvid1').css('opacity', "0");
-                video2.pause();
-                video.pause();
-                video3.play();
                 break;
             }
             currentStep = stepToShow;

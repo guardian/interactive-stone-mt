@@ -1,12 +1,19 @@
 .uit-body {
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    background-color: #fff;
+
     p {
         @include bodyCopy();
         margin-bottom: 18px;
     }
 
-    margin-left: 40px;
-    margin-right: 40px;
-    background-color: #fff;
+    @include mq(desktop) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }
 
 .uit-drop {
@@ -16,9 +23,10 @@
 }
 
 .uit-subhead {
-    @include banding($c-yellow);
+    @include banding($c-red);
     font-size: 28px;
     font-weight: bold;
+    color: #fff;
 }
 
 .uit-button {

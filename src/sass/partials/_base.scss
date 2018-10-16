@@ -1,6 +1,10 @@
 .uit {
     overflow: hidden;
-    background-color: #ededed;
+    background-color: #fff;
+
+    @include mq(desktop) {
+        background-color: #ededed;
+    }
 }
 
 .uit-container {
@@ -63,4 +67,8 @@
     margin-bottom: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+a {
+    color: $c-red;
 }
