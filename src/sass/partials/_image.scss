@@ -3,27 +3,56 @@
 }
 
 .uit-section-divider {
-    width: 65%;
-    margin: 50% auto;
+
+    width: 100%;
     margin-bottom: 15px;
-    margin-top: 30px;
+    margin-top: 15px;
     position: relative;
+
+    @include mq(desktop) {
+        max-width: 50vw;
+        margin: 50% auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    @include mq(leftCol) {
+        max-width: 60vw;
+        margin: 50% auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    @include mq(wide) {
+        max-width: 35vw;
+        margin: 50% auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
 }
 
 .uit-quote-subhead {
     position: absolute;
-    top: 10%;
-    left: 65%;
-    width: 50%;
-    font-size: 38px;
+    top: 5%;
+    left: 5%;
+    width: 70%;
+    font-size: 24px;
     opacity: 0;
     transition-delay: 4s;
     transition: opacity 2.5s;
 
+    @include mq(tablet) {
+        top: 5%;
+        left: 5%;
+        width: 70%;
+        font-size: 38px;
+    }
+
     h3 {
         font-size: 24px;
         @include mq(desktop) {
-            font-size: 34px;
+            font-size: 48px;
+            line-height: 54px;
         }
     }
 
@@ -31,31 +60,69 @@
         font-family: 'Guardian Egyptian Web';
         font-weight: 300;
         color: #fff;
-
         font-size: 24px;
-
         @include mq(desktop) {
             font-size: 34px;
         }
     }
 }
 
-.uit-left-image {
-    width: 50%;
-    //margin: 50% auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
+.uit-left {
     float: left;
-    margin-left: 0px;
-    margin-right: 20px;
+    width: 50%;
+    img, video {
+        width: 100%;
+        border: 2px solid $c-red;
+    }
+
+    @include mq(desktop) {
+        //margin: 50% auto;
+        margin-left: -220px;
+    }
+    @include mq(wide) {
+        //margin: 50% auto;
+        margin-left: -14vw;
+    }
+
+    path {
+        fill: $c-red;
+    }
 }
 
-.uit-right-image {
-    width: 50%;
-    //margin: 50% auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    float: right;
-    margin-left: 20px;
-    margin-right: -200px;
+.uit-left-image {
+    margin-right: 15px;
+    @include mq(desktop) {
+        margin-right: 30px;
+    }
+    @include mq(wide) {
+        margin-right: 30px;
+    }
+}
+
+.uit-left-quote {
+    margin-right: 15px;
+    line-height: 30px;
+    svg {
+        width: 10%;
+    }
+    @include mq(desktop) {
+        margin-right: 15px;
+    }
+    @include mq(wide) {
+        margin-right: 15px;
+    }
+}
+
+
+.uit-caption {
+  padding-top: 5px;
+  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #767676;
+  margin-right: 0px;
+}
+
+circle {
+    fill: $c-red;
 }

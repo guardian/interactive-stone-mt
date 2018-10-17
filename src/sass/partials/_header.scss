@@ -16,7 +16,7 @@
 
 .uit-header__headline-kicker {
     display: block;
-    color: $c-red;
+    color: #333333;
 }
 
 .uit-middle-content {
@@ -30,6 +30,51 @@
         @include mq(tablet) {
             font-size: 24px;
         }
+    }
+}
+
+.uit-middle-content {
+    position: relative;
+    max-width: 100%;
+    margin: 50% auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @include mq(tablet) {
+        max-width: 90vw;
+        p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    @include mq(desktop) {
+        max-width: 50vw;
+        p {
+            font-size: 17px;
+            line-height: 24px;
+        }
+    }
+
+    @include mq(leftCol) {
+        max-width: 45vw;
+    }
+
+    @include mq(wide) {
+        max-width: 40vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 30vw;
     }
 }
 
@@ -55,7 +100,7 @@
     font-family: 'Guardian Egyptian Web';
     font-style: italic;
     font-weight: 400;
-    color: $c-red;
+    color: #333333;
 
     a {
         font-style: normal;
@@ -86,14 +131,6 @@
   overflow: hidden;
 }
 
-.uit-video-text {
-    @include mq(tablet) {
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-    }
-}
-
 .video_card_container {
     width: 100%;
     height: 100%;
@@ -122,7 +159,6 @@
 }
  .uit-video-cta {
    font-size: 20px;
-   padding-bottom: 10px;
    color: $c-white;
  }
 

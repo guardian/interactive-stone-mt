@@ -23,10 +23,11 @@
 }
 
 .uit-subhead {
-    @include banding($c-red);
-    font-size: 28px;
+    //@include banding($c-red);
+    font-size: 34px;
     font-weight: bold;
-    color: #fff;
+    color: #ffe500;
+    line-height: 40px;
 }
 
 .uit-button {

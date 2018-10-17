@@ -8,12 +8,15 @@
     margin-top: 60vh;
 
     p {
-        font-size: 24px;
+        font-size: 17px;
+        @include mq(mobileLandscape) {
+            font-size: 24px;
+        }
     }
 }
 
 .uit-header-map__container {
-  position: relative;
+    position: relative;
 }
 
 .uit-header-map {
@@ -38,16 +41,20 @@
 }
 
 .uit-step__last {
-  margin-bottom: 95vh;
+    margin-bottom: 95vh;
 
-  &.is-fixed {
-      margin-bottom: -200px;
-  }
+    &.is-fixed {
+        margin-bottom: -200px;
+    }
 }
 
 .uit-chart {
-  padding-bottom: 24px;
-  //margin-bottom: 750px;
+    padding-bottom: 0px;
+    //margin-bottom: 750px;
+
+    @include mq(tablet) {
+        padding-bottom: 24px;
+    }
 
     &.is-fixed {
         position: fixed;
@@ -65,16 +72,3 @@
         }
     }
 }
-/*
-.uit-chart-middle {
-    margin-top: -130vh;
-
-    &.is-fixed {
-        margin-top: 0;
-    }
-}
-
-.uit-chart-middle-copy {
-    margin-top: 30vh;
-}
-*/
