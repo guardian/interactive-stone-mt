@@ -1,0 +1,64 @@
+.uit-quick-guide {
+    background-color: #F1F1F1;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-size: 18px;
+    line-height: 30px;
+
+    .uit-guide-label {
+        padding-top: 10px;
+        color: #e00000;
+        font-weight: 500;
+        padding-left: 8px;
+    }
+
+    p {
+        font-weight: 500;
+        margin-bottom: 0px;
+        padding-left: 8px;
+    }
+
+    .top-line {
+        margin-bottom: 3px;
+        background-color: #dcdcdc;
+        height: 1px;
+    }
+}
+
+.uit-quick-guide-button {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 60px;
+    margin-top: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    svg {
+        width: 5%;
+        fill: #fff;
+        vertical-align: bottom;
+    }
+
+    &:hover {
+        background-color: #c70000;
+    }
+}
+
+.uit-top-area {
+    margin-bottom: 5px;
+}
+
+.uit-hidden-area {
+    display: none;
+    padding: 15px;
+
+    li {
+        margin-bottom: 15px;
+        font-size: 17px;
+        line-height: 24px;
+    }
+
+    &.nav-is-expanded{
+        display: block;
+    }
+}

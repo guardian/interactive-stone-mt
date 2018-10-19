@@ -30,6 +30,10 @@
     line-height: 40px;
 }
 
+.uit-subhead__inner{
+    color: #c70000;
+}
+
 .uit-button {
     @include button($c-white, $c-red);
 }

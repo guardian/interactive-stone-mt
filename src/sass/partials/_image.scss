@@ -72,7 +72,7 @@
     width: 50%;
     img, video {
         width: 100%;
-        border: 2px solid $c-red;
+        border: 0px solid #000;
     }
 
     @include mq(desktop) {
@@ -87,15 +87,21 @@
     path {
         fill: $c-red;
     }
+
+    p {
+        font-size: 14px;
+        line-height: 17px;
+        font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    }
 }
 
 .uit-left-image {
     margin-right: 15px;
     @include mq(desktop) {
-        margin-right: 30px;
+        margin-right: 20px;
     }
     @include mq(wide) {
-        margin-right: 30px;
+        margin-right: 20px;
     }
 }
 
@@ -106,19 +112,16 @@
         width: 10%;
     }
     @include mq(desktop) {
-        margin-right: 15px;
+        margin-right: 10px;
     }
     @include mq(wide) {
-        margin-right: 15px;
+        margin-right: 10px;
     }
 }
 
 
 .uit-caption {
   padding-top: 5px;
-  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-  font-size: 14px;
-  line-height: 1;
   color: #767676;
   margin-right: 0px;
 }
