@@ -21,23 +21,39 @@
     position: absolute;
     top: 5%;
     left: 5%;
-    width: 70%;
-    font-size: 24px;
+    width: 90%;
     opacity: 0;
     transition-delay: 4s;
     transition: opacity 2.5s;
     color: #fff;
 
+    .uit-subhead {
+        line-height: 32px;
+
+        @include mq(tablet) {
+            line-height: 44px;
+        }
+
+        @include mq(desktop) {
+            line-height: 48px;
+        }
+    }
+
     @include mq(tablet) {
         top: 5%;
         left: 5%;
         width: 70%;
-        font-size: 38px;
+        font-size: 34px;
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 28px;
         color: #fff;
+
+        @include mq(tablet) {
+            font-size: 38px;
+        }
+
         @include mq(desktop) {
             font-size: 48px;
             line-height: 54px;
@@ -56,16 +72,26 @@
 
 .uit-left {
     float: left;
-    width: 50%;
+    width: 100%;
+
     img, video {
         width: 100%;
         border: 0px solid #000;
     }
 
+    @include mq(tablet) {
+        width: 60%;
+    }
+
     @include mq(desktop) {
+        width:100%;
+        max-width: 400px;
         margin-left: -120px;
     }
+
     @include mq(wide) {
+        width:100%;
+        max-width: 440px;
         margin-left: -220px;
     }
 
@@ -112,7 +138,11 @@
     margin-bottom: 10px;
 
     svg {
-        width: 10%;
+        width: 5%;
+
+        @include mq(tablet) {
+            width: 10%;
+        }
     }
 
     @include mq(tablet) {
