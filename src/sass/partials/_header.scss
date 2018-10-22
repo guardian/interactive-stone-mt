@@ -16,26 +16,13 @@
 
 .uit-header__headline-kicker {
     display: block;
-    color: #333333;
-}
-
-.uit-middle-content {
-    .uit-header__standfirst {
-        padding: 3px 0 0;
-        font-family: 'Guardian Egyptian Web';
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 1.2;
-
-        @include mq(tablet) {
-            font-size: 24px;
-        }
-    }
+    color: #fff;
+    padding: 10px;
 }
 
 .uit-middle-content {
     position: relative;
-    max-width: 100%;
+    max-width: 620px;
     margin: 50% auto;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -50,7 +37,6 @@
     }
 
     @include mq(tablet) {
-        max-width: 90vw;
         p {
             font-size: 18px;
             line-height: 24px;
@@ -58,23 +44,22 @@
     }
 
     @include mq(desktop) {
-        max-width: 50vw;
         p {
             font-size: 17px;
             line-height: 24px;
         }
     }
 
-    @include mq(leftCol) {
-        max-width: 45vw;
-    }
+    .uit-header__standfirst {
+        padding: 3px 0 0;
+        font-family: 'Guardian Egyptian Web';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.2;
 
-    @include mq(wide) {
-        max-width: 40vw;
-    }
-
-    @media screen and (min-width: 1600px) {
-      max-width: 30vw;
+        @include mq(tablet) {
+            font-size: 24px;
+        }
     }
 }
 
@@ -168,4 +153,34 @@
 
 .new-header {
     z-index: 400;
+}
+
+.uit-header-container {
+    background-color: #000;
+
+    @include mq(desktop) {
+        margin-left: calc(20% + 20px);
+        padding-right:30%;
+    }
+}
+
+.uit-header-series-link {
+    background: #c70000;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: 700;
+    padding: 5px;
+    display: inline-block;
+
+    a {
+        color: #f6f6f6;
+    }
+
+    @include mq(tablet) {
+        font-size: 1.5rem;
+    }
+
+    @include mq(desktop){
+        width: 50%;
+    }
+
 }

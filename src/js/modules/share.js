@@ -1,5 +1,5 @@
 var pageUrl = window.location.href.split('#')[0],
-    shareCopy = 'What a cool article #Article';
+    shareCopy = 'Is it time to remove the Confederate monument on Stone Mountain? ';
 
 module.exports =  {
     init: function() {
@@ -13,9 +13,9 @@ module.exports =  {
     },
 
     getTwitterLink: function() {
-        return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) + 
-                '&url=' + encodeURIComponent(pageUrl + '?CMP=share_btn_tw');
-    },
+       return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) +
+               '&url=' + encodeURIComponent(pageUrl + '?CMP=share_btn_tw');
+   },
 
     getFacebookLink: function() {
         return 'https://www.facebook.com/dialog/share?app_id=180444840287&href=' + encodeURIComponent(pageUrl + '?CMP=share_btn_fb');

@@ -23,11 +23,16 @@
 }
 
 .uit-subhead {
-    //@include banding($c-red);
+    @include banding($c-black);
     font-size: 34px;
     font-weight: bold;
-    color: #ffe500;
+    color: $c-red;
     line-height: 40px;
+
+    svg {
+        width: 10%;
+        fill: $c-red;
+    }
 }
 
 .uit-subhead__inner{

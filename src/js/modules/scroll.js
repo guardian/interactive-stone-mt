@@ -35,7 +35,7 @@ module.exports =  {
             e.preventDefault();
             div_height = $('#uit-section-divider-3').height();
             div_width = $('#uit-section-divider-3').width();
-            $('#uit-section-divider-3').html('<iframe id="interview_vid_3" src="https://www.youtube.com/embed/P0Gf2-2PSsk?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#uit-section-divider-3').html('<iframe id="interview_vid_3" src="https://www.youtube.com/embed/0etUP2WzhHM?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
             $('#interview_vid_3').css('height', div_height);
             $('#interview_vid_3').css('width', div_width);
         }.bind(this));
@@ -44,7 +44,7 @@ module.exports =  {
             e.preventDefault();
             div_height = $('#uit-section-divider-2').height();
             div_width = $('#uit-section-divider-2').width();
-            $('#uit-section-divider-2').html('<iframe id="interview_vid_2" src="https://www.youtube.com/embed/ZSsmQs8nFXA?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#uit-section-divider-2').html('<iframe id="interview_vid_2" src="https://www.youtube.com/embed/B7JB_bJrj5k?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
             $('#interview_vid_2').css('height', div_height);
             $('#interview_vid_2').css('width', div_width);
         }.bind(this));
@@ -53,7 +53,7 @@ module.exports =  {
             e.preventDefault();
             div_height = $('#uit-section-divider-1').height();
             div_width = $('#uit-section-divider-1').width();
-            $('#uit-section-divider-1').html('<iframe id="interview_vid_1" src="https://www.youtube.com/embed/Zut1FlNP-hk?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+            $('#uit-section-divider-1').html('<iframe id="interview_vid_1" src="https://www.youtube.com/embed/3s-4r8uNW_o?autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
             $('#interview_vid_1').css('height', div_height);
             $('#interview_vid_1').css('width', div_width);
         }.bind(this));
@@ -63,7 +63,7 @@ module.exports =  {
         video.play();
         source2.setAttribute('src', '{{ path }}/assets/intro_2.mp4');
         video2.append(source2);
-        video2.pause();
+        //video2.pause();
     },
 
     onScroll: function() {
@@ -139,13 +139,13 @@ module.exports =  {
                 case 1:
                 $('#bgvid2').css('opacity', "0");
                 $('#bgvid1').css('opacity', "1");
-                video2.pause();
+                //video2.pause();
                 video.play();
                 break;
                 case 2:
                 $('#bgvid2').css('opacity', "1");
                 $('#bgvid1').css('opacity', "0");
-                video.pause();
+                //video.pause();
                 video2.play();
                 break;
             }
