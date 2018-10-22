@@ -31,10 +31,14 @@
     margin-bottom: 65vh;
     font-size: 24px;
     font-weight: 700;
+    line-height: 30px;
 
     .uit-subhead__inner{
         color: $c-white;
-        line-height: 44px
+
+        @include mq(tablet) {
+            line-height: 44px;
+        }
     }
 
     @include mq(tablet) {
@@ -55,7 +59,7 @@
     //margin-bottom: 750px;
 
     @include mq(tablet) {
-        padding-bottom: 24px;
+        padding-bottom: 48px;
     }
 
     &.is-fixed {

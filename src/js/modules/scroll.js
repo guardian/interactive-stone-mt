@@ -13,7 +13,6 @@ module.exports =  {
         this.bindings();
         this.getSteps();
         this.onScroll();
-
     },
 
     getSteps: function() {
