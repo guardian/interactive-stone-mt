@@ -55,9 +55,9 @@
             line-height: 24px;
         }
 
-    @include mq(wide){
-        max-width: 680px;
-    }
+        @include mq(wide){
+            max-width: 680px;
+        }
     }
 
     .uit-header__standfirst {
@@ -105,25 +105,25 @@
 }
 
 .uit-photo-container {
-  position: relative;//
-  max-width: 100vw;
-  MIN-HEIGHT: 100VH;
-  width: auto;
-  height: auto;
-  overflow: hidden;
+    position: relative;//
+    max-width: 100vw;
+    MIN-HEIGHT: 100VH;
+    width: auto;
+    height: auto;
+    overflow: hidden;
 }
 
 .uit-photo-text {
-  position: absolute;
-  width: 100%;
-  background: rgba(0, 0, 0, 1);
-  Z-INDEX: 200;
-  color: $c-white;
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 1);
+    Z-INDEX: 200;
+    color: $c-white;
 }
 
 .uit-header-map {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .video_card_container {
@@ -152,14 +152,25 @@
     height: 100%;
     width: 100%;
 }
- .uit-video-cta {
-   font-size: 20px;
-   color: $c-white;
- }
 
- .uit-video-cta * {
-   vertical-align: middle;
- }
+.uit-video-cta {
+    font-size: 20px;
+    color: $c-white;
+
+    a {
+        svg {
+            width: 3em;
+
+            @include mq(tablet) {
+                width: 7em;
+            }
+        }
+    }
+}
+
+.uit-video-cta * {
+    vertical-align: middle;
+}
 
 .new-header {
     z-index: 400;

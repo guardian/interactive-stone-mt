@@ -77,10 +77,11 @@
 
     h4 {
         font-family: 'Guardian Egyptian Web';
-        font-weight: 300;
+        font-weight: 600;
         font-size: 24px;
+
         @include mq(desktop) {
-            font-size: 34px;
+            font-size: 32px;
         }
     }
 }
@@ -170,4 +171,7 @@
 
 circle {
     fill: $c-red;
+    &:hover {
+        fill: #000;
+    }
 }
