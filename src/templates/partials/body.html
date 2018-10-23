@@ -1,4 +1,4 @@
-<div class='uit-container'>
+<div class='uit-container uit-top-header'>
     <div class='uit-middle-content'>
         <ul class='uit-steps'>
             <li class='uit-step uit-subhead' data-step='1'>
@@ -77,9 +77,12 @@
     </div>
 
     <div id="uit-section-divider-1" class="uit-section-divider" data-step='1'>
-        <video class="uit-chart-image" playsinline autoplay muted loop data-step='1'>
-            <source id="uit-video-source-1" src="{{ path }}/assets/desmond.mp4" type="video/mp4">
+        <video class="uit-chart-image is-video" poster="{{ path }}/assets/desmond.mp4" data-link="{{ path }}/assets/desmond.mp4"playsinline autoplay muted loop data-step='1'>
             </video>
+            <img id="uit-video-source-1" class="uit-chart-image is-img" src="{{ path }}/assets/desmond.jpg">
+            <!--
+
+            -->
 
             <div class="uit-quote-subhead">
                 <h3 class='uit-subhead'>
@@ -123,13 +126,13 @@
             <p>But the politics of the issue are difficult – not least because you can’t just take down a sculpture carved into side of a mountain – and more recently Abrams has said that although she stands by her position, <a href="https://www.valdostadailytimes.com/news/local_news/abrams-state-should-not-fund-monument-to-domestic-terrorism/article_643e4ecd-ff18-564d-a33f-0f5ca80e57e8.html">dealing with the monument is not top of her list of priorities.</a></p>
         </div>
 
-        <div id="uit-section-divider-2" class="uit-section-divider" data-step='2'>
-            <video class="uit-chart-image" playsinline autoplay muted loop data-step='1'>
-                <source id="uit-video-source-2" src="{{ path }}/assets/thurmond.mp4" type="video/mp4">
+        <div id="uit-section-divider-2" poster="{{ path }}/assets/thurmond.jpg" class="uit-section-divider" data-step='2'>
+            <video class="uit-chart-image is-video" data-link="{{ path }}/assets/thurmond.mp4" playsinline autoplay muted loop data-step='1'>
                 </video>
                 <!--
                 <img id="uit-video-source-2" class="uit-chart-image" src="{{ path }}/assets/thurmond.gif">
                 -->
+                <img id="uit-video-source-2" class="uit-chart-image is-img" src="{{ path }}/assets/thurmond.jpg">
                 <div class="uit-quote-subhead">
                     <h3 class='uit-subhead'>
                         <span>{{> icons/quote }}Keep the carving as a teaching opportunity.</span>
@@ -185,10 +188,10 @@
                 <p>She says she doesn’t understand why some prominent African-American civil rights activists and politicians want to remove it. “Good or bad, history is history. You can’t erase the fact of history. Slavery wasn’t right but you can’t go in the textbook and remove it or take it out, ever,” she said.</p>
             </div>
 
-            <div id="uit-section-divider-3"  class="uit-section-divider" data-step='3'>
-                <video class="uit-chart-image" playsinline autoplay muted loop data-step='1'>
-                    <source id="uit-video-source-3" src="{{ path }}/assets/colletti.mp4" type="video/mp4">
+            <div id="uit-section-divider-3" class="uit-section-divider" data-step='3'>
+                <video class="uit-chart-image is-video" data-link="{{ path }}/assets/colletti.mp4" poster="{{ path }}/assets/colletti.mp4" playsinline autoplay muted loop data-step='1'>
                     </video>
+                    <img id="uit-video-source-3" class="uit-chart-image is-img" src="{{ path }}/assets/colletti.jpg">
                     <div class="uit-quote-subhead">
                         <h3 class='uit-subhead'>
                             <span>{{> icons/quote }}Why are people trying to take away history?</span>
@@ -218,7 +221,7 @@
 
                     <div class="uit-left uit-left-image">
                         <img src="{{ path }}/assets/rally.jpg">
-                        <p href=''>{{> icons/up_caption }} Visitors at Stone Mountain. Photograph: Michael Rabideau/Getty</p>
+                        <p href=''>{{> icons/up_caption }} Supporters of the Ku Klux Klan march. Photograph: Paul Harris/Getty</p>
                     </div>
 
                         <p>“It’s outlandish, it’s absurd, it’s ridiculous,” said Joseph Crespino, professor of history at Emory University in Atlanta, of the monument – “given our change in voice, our change in values, our understanding of the moral limitations … or just our understanding of history.”</p>

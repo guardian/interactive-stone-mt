@@ -12,6 +12,7 @@ module.exports =  {
     init: function() {
         this.bindings();
         this.getSteps();
+        this.loadVideos();
         this.onScroll();
     },
 
@@ -27,6 +28,7 @@ module.exports =  {
         }.bind(this));
 
         $(window).resize(function() {
+            this.loadVideos();
             this.onScroll();
         }.bind(this));
 
@@ -64,6 +66,18 @@ module.exports =  {
         video2.append(source2);
         //video2.pause();
     },
+
+    loadVideos: function(){
+        var video = $('#uit-section-divider-1 .is-video');
+        var quote_source;
+        if (video.is(":visible")) {
+            $('.is-video').each(function(i, el) {
+                quote_source = document.createElement('SOURCE');
+                quote_source.setAttribute('src', $(el).data('link'));
+                $(el).append(quote_source);
+            }.bind(this));
+        }
+        },
 
     onScroll: function() {
         this.updateValues();
