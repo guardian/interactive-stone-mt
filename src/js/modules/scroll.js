@@ -32,6 +32,9 @@ module.exports =  {
             this.onScroll();
         }.bind(this));
 
+        source2.setAttribute('src', '{{ path }}/assets/intro_2.mp4');
+        video2.append(source2);
+
         $('#video_svg_colletti').click(function(e) {
             e.preventDefault();
             div_height = $('#uit-section-divider-3').height();
@@ -59,11 +62,6 @@ module.exports =  {
             $('#interview_vid_1').css('width', div_width);
         }.bind(this));
 
-        source.setAttribute('src', '{{ path }}/assets/intro_1.mp4');
-        video.append(source);
-        video.play();
-        source2.setAttribute('src', '{{ path }}/assets/intro_2.mp4');
-        video2.append(source2);
         //video2.pause();
     },
 

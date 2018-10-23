@@ -30,6 +30,13 @@
         margin-bottom: 15px;
         margin-top: 15px;
     }
+
+    @include mq(wide) {
+        max-width: 940px;
+        margin: 50% auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
 }
 
 .uit-quote-subhead {
@@ -173,5 +180,6 @@ circle {
     fill: $c-red;
     &:hover {
         fill: #000;
+        text-decoration: none;
     }
 }
