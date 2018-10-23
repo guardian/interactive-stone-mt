@@ -1,11 +1,9 @@
-.uit-header-map__point {
-}
-
 .uit-steps {
     list-style: none;
     padding: 0;
     margin: 0;
     margin-top: 60vh;
+    overflow: auto;
 }
 
 .uit-header-map__container {
@@ -26,7 +24,6 @@
 .uit-step {
     position: relative;
     z-index: 500;
-    //background-color: #000;
     padding: 6px;
     margin-bottom: 65vh;
     font-size: 24px;
@@ -46,36 +43,17 @@
     }
 }
 
-.uit-step__last {
-    margin-bottom: 95vh;
-
-    &.is-fixed {
-        margin-bottom: -200px;
-    }
-}
-
 .uit-chart {
-    padding-bottom: 0px;
     z-index: 400;
-    //margin-bottom: 750px;
-
-    @include mq(tablet) {
-        padding-bottom: 48px;
-    }
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     &.is-fixed {
         position: fixed;
         top: 0;
-        width: 620px;
-        max-width: calc(100% - 20px);
-
-        @include mq(mobileLandscape) {
-            max-width: calc(100% - 40px);
-        }
-
-        @include mq(tablet) {
-            max-width: 100%;
-            top: 0vh;
-        }
     }
 }

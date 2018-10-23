@@ -41,39 +41,31 @@
 
 .uit-quote-subhead {
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
+    bottom: 100px;
+    left: 10px;
+    width: 50%;
     opacity: 0;
     transition-delay: 4s;
     transition: opacity 2.5s;
     color: #fff;
 
-    .uit-subhead {
-        line-height: 32px;
-
-        @include mq(tablet) {
-            line-height: 44px;
-        }
-
-        @include mq(desktop) {
-            line-height: 48px;
-        }
-    }
-
     @include mq(tablet) {
-        top: 5%;
-        left: 5%;
+        top: 12px;
+        left: 24px;
+        bottom: auto;
         width: 70%;
         font-size: 34px;
     }
 
     h3 {
         font-size: 28px;
+        line-height: 32px;
         color: #fff;
+        margin: 0;
 
         @include mq(tablet) {
             font-size: 38px;
+            line-height: 44px;
         }
 
         @include mq(desktop) {
@@ -82,14 +74,9 @@
         }
     }
 
-    h4 {
-        font-family: 'Guardian Egyptian Web';
-        font-weight: 600;
-        font-size: 24px;
-
-        @include mq(desktop) {
-            font-size: 32px;
-        }
+    .uit-quote-subhead__cite {
+        font-style: italic;
+        display: inline-block;
     }
 }
 
@@ -129,9 +116,23 @@
         margin-bottom: 5px;
     }
 
+    h2, h3, a {
+        font-size: 24px;
+        line-height: 30px;
+        font-family: 'Guardian Egyptian Web';
+        font-weight: 700;
+    }
+
     h3 {
-        font-size: 18px;
-        line-height: 24px;
+        color: $c-red;
+    }
+
+    a {
+        border-bottom: 1px solid $c-red;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -178,6 +179,7 @@
 
 circle {
     fill: $c-red;
+
     &:hover {
         fill: #000;
         text-decoration: none;

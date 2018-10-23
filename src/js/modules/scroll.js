@@ -80,7 +80,6 @@ module.exports =  {
     onScroll: function() {
         this.updateValues();
         this.fixMap();
-        this.unFixMap();
         this.setStep();
         this.showQuote();
     },
@@ -90,37 +89,14 @@ module.exports =  {
         windowHeight = $(window).height();
         windowBottom = windowTop + windowHeight;
         chartHeight = $('.uit-chart').height() + 48;
-        $('.uit-chart').css('margin-bottom', $(window).height());
     },
 
     fixMap: function() {
-        $('.uit-chart-marker').each(function(i, el) {
-            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
-                ($('#uit-chart-number--'+ $(el).attr('data-chart'))).addClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('uit-chart-marker-fixed');
-                currentChart = $(el).attr('data-chart');
-            } else {
-                $('#uit-chart-number--'+ $(el).attr('data-chart')).removeClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('uit-chart-marker-fixed');
-            }
-        }.bind(this));
-    },
-
-    unFixMap: function() {
-        $('.uit-chart-marker-fixed').each(function(i, el) {
-            if (windowTop > $(el).offset().top - this.percentageOfHeight(1)) {
-                ($('#uit-chart-number--'+ $(el).attr('data-chart'))).removeClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).addClass('is-fixed');
-                $('#uit-steps--'+ $(el).attr('data-chart')).addClass('is-fixed');
-            } else {
-                $('#uit-chart-number--'+ $(el).attr('data-chart')).addClass('is-fixed');
-                $('#uit-chart-last--'+ $(el).attr('data-chart')).removeClass('is-fixed');
-                currentChart = $(el).attr('data-chart');
-                $('.bgvid').css('position', "absolute");
-            }
-        }.bind(this));
+        if (windowTop > $('.uit-body').offset().top - windowHeight) {
+            $('#uit-chart-number--1').removeClass('is-fixed');
+        } else {
+            $('#uit-chart-number--1').addClass('is-fixed');
+        }
     },
 
     setStep: function() {
